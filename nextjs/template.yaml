@@ -13,6 +13,7 @@ spec:
     - title: Project information
       required:
         - name
+        - owner
       properties:
         name:
           title: Name
@@ -21,14 +22,6 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-        repoUrl:
-          title: Repository Location
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
-              - git.pipefy.net
         owner:
           title: Owner Team
           type: string
@@ -37,6 +30,18 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+    - title: Repository information
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+              - git.pipefy.net
 
   steps:
     - id: fetch-base
